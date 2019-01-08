@@ -1,0 +1,7 @@
+{
+    "img_title_url":"img/quillen/quillen-title.jpg",
+    "img_status":"img/quillen/quillen-status.jpg",
+    "name":"Quillen",
+    "class":"",
+    "Role":"",
+}
