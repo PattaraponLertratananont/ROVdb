@@ -1,0 +1,7 @@
+{
+    "img_title_url":"img/gildur/gildur-title.jpg",
+    "img_status":"img/gildur/gildur-status.jpg",
+    "name":"Gildur",
+    "class":"เมจ/แทงค์",
+    "Role":"ควบคุม/ว่องไว",
+}
