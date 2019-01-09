@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { DropdownModule } from 'primeng/dropdown';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeroListComponent } from './hero-list/hero-list.component';
@@ -22,6 +23,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    HttpClientModule,
     AccordionModule,
     BrowserAnimationsModule,
     ButtonModule,

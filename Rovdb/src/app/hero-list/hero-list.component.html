@@ -1,2 +1,9 @@
-<p-dropdown [options]="class" [showClear]="true" optionLabel="name" placeholder="Class"></p-dropdown>
-<p-dropdown [options]="role" [showClear]="true" optionLabel="name" placeholder="Role"></p-dropdown>
+<!-- <p-dropdown [options]="class" [showClear]="true" placeholder="Class"></p-dropdown>
+<p-dropdown [options]="role" [showClear]="true" optionLabel="name" placeholder="Role"></p-dropdown> -->
+<div ngbDropdown>
+  <button ngbDropdownToggle class="btn btn-primary" id="testDrop">TEST</button>
+  <div ngbDropdownMenu aria-labelledby="testDrop" *ngFor="let item of class">
+    <a class="dropdown-item">{{item.class}}</a>
+    <a class="dropdown-item">{{item.subclass}}</a>
+  </div>
+</div>

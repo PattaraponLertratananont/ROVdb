@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SelectItem } from 'primeng/api';
-
+import { GetHeroService } from '../get-hero.service'
+import { Hero } from '../Hero'
 @Component({
   selector: 'app-hero-list',
   templateUrl: './hero-list.component.html',
@@ -9,25 +9,20 @@ import { SelectItem } from 'primeng/api';
 
 export class HeroListComponent implements OnInit {
 
-  class: Dropdown[];
-  role: Dropdown[];
 
-  constructor() {
-    //SelectItem API with label-value pairs
-    this.class = [
-      { name: 'เมจ' },
-      { name: 'เมจ/แทงค์' },
-      { name: 'แอสซาซิน' },
-    ];
-    this.role = [
-      {name:'ว่องไว/ฟาร์ม'},
-      {name:'ควบคุม/ว่องไว'},
-    ]
+  class: any[] = []
+
+  constructor(private serviceGet: GetHeroService) {
+
   }
   ngOnInit() {
+    this.get()
   }
-
+  get() {
+    this.serviceGet.getClassMage()
+      .subscribe(data => {this.class = data,console.log(data)})
+  }
 }
-interface Dropdown {
-  name: string;
+interface CLASS {
+  class: string;
 }

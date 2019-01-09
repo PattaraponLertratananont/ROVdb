@@ -29,6 +29,7 @@ func main() {
 	e.GET("/", hello)
 	e.GET("/assasin", GetdataAssasin)
 	e.GET("/mage", GetdataMage)
+	e.GET("/hero", GetdataHero)
 
 	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
 		AllowOrigins: []string{"*"},
@@ -42,6 +43,25 @@ func main() {
 func GetdataAssasin(c echo.Context) error {
 	//! Openfile
 	fileHandle, err := os.Open("assassin_db.txt")
+	if err != nil {
+		log.Fatalf("Failed open file message.txt: %s", err)
+	}
+	defer fileHandle.Close()
+
+	//! Scan text in File
+	byteValue, _ := ioutil.ReadAll(fileHandle)
+	result := HeroList2{}
+	//making data to correct json.format
+	json.Unmarshal([]byte(byteValue), &result)
+	fmt.Print(string(byteValue))
+
+	//! Return this if it's work!!
+	return c.JSON(http.StatusOK, result)
+}
+//Get Assasin data
+func GetdataHero(c echo.Context) error {
+	//! Openfile
+	fileHandle, err := os.Open("hero_db.txt")
 	if err != nil {
 		log.Fatalf("Failed open file message.txt: %s", err)
 	}
@@ -72,7 +92,7 @@ func GetdataMage(c echo.Context) error {
 	result := HeroList2{}
 	//! "[" and "]" are making data to correct json.format
 	json.Unmarshal([]byte(byteValue), &result)
-	fmt.Print(string(byteValue))
+	// fmt.Print(string(byteValue))
 
 	//! Return this if it's work!!
 	return c.JSON(http.StatusOK, result)
@@ -83,7 +103,8 @@ type HeroList2 struct {
 	Imgtitleurl         string `json:"img_title_url"`
 	Imgstatus           string `json:"img_status"`
 	Name                string `json:"name"`
-	Class               []string `json:"class"`
+	Class               string `json:"class"`
+	SubClass            string `json:"subclass"`
 	Role                string `json:"role"`
 	Hp                  int    `json:"hp"`
 	AttackDamage        int    `json:"attackdamage"`
