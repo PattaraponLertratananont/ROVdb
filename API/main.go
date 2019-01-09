@@ -83,7 +83,7 @@ type HeroList2 struct {
 	Imgtitleurl         string `json:"img_title_url"`
 	Imgstatus           string `json:"img_status"`
 	Name                string `json:"name"`
-	Class               string `json:"class"`
+	Class               []string `json:"class"`
 	Role                string `json:"role"`
 	Hp                  int    `json:"hp"`
 	AttackDamage        int    `json:"attackdamage"`

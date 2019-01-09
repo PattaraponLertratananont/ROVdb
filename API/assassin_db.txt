@@ -2,7 +2,7 @@
     "img_title_url":"img/quillen/quillen-title.jpg",
     "img_status":"img/quillen/quillen-status.jpg",
     "name":"Quillen",
-    "class":"แอสซาซิน",
+    "class":["แอสซาซิน"],
     "role":"ว่องไว/ฟาร์ม",
     "hp":3269,
     "attackdamage":177,
