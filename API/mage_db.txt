@@ -15,7 +15,7 @@
     "IgnoreMagicDefense":0,
     "SpeedAttack":0,
     "RateCritical":0,
-    "DamageCritical":2,
+    "DamageCritical":200%,
     "LifeSteal":0,
     "MagicLifeSteal":0,
     "CoolDownSpeed":0,
